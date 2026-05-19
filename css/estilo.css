@@ -1,0 +1,10 @@
+header {
+    background-color: rgb(191, 231, 11);
+}
+
+footer {
+    background-color: rgb(5, 3, 3);
+    color: aqua;
+    text-align: center;
+    padding: 1.5%;
+}
