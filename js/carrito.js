@@ -1,36 +1,89 @@
-console.log("JavaScript conectado");
+console.log("Sistema iniciado");
+
+let carrito = [];
 
 let botones = document.querySelectorAll(".agregar");
 
-console.log(botones);
+let contenedorCarrito =
+document.querySelector("#carrito");
+
+let totalHTML =
+document.querySelector("#total");
 
 botones.forEach(function(boton){
 
     boton.addEventListener("click", function(){
 
-        let tarjeta = boton.closest(".card");
+        let tarjeta =
+        boton.closest(".card");
 
         let titulo =
         tarjeta.querySelector(".card-title").textContent;
 
+        let precioHTML =
+        tarjeta.querySelector(".precio");
+
         let precio =
-        tarjeta.querySelector(".precio").textContent;
+        Number(precioHTML.dataset.precio);
 
         let cantidad =
-        tarjeta.querySelector(".cantidad").value;
+        Number(
+            tarjeta.querySelector(".cantidad").value
+        );
 
-        if(cantidad == "Cantidad"){  
-    alert("Seleccione una cantidad");
-    return;
-}
+        let subtotal =
+        precio * cantidad;
 
-        console.log("Producto:");
-        console.log(titulo);
+        let producto = {
 
-        console.log("Precio:");
-        console.log(precio);
+            nombre: titulo,
+            precio: precio,
+            cantidad: cantidad,
+            subtotal: subtotal
 
-        console.log("Cantidad:");
-        console.log(cantidad);
+        };
+
+        carrito.push(producto);
+
+        renderizarCarrito();
+
     });
+
 });
+
+function renderizarCarrito(){
+
+    contenedorCarrito.innerHTML = "";
+
+    let totalGeneral = 0;
+
+    carrito.forEach(function(producto){
+
+        totalGeneral =
+        totalGeneral + producto.subtotal;
+
+        contenedorCarrito.innerHTML += `
+
+        <div class="border-bottom mb-2 pb-2">
+
+            <h5>${producto.nombre}</h5>
+
+            <p>
+            Cantidad: ${producto.cantidad}
+            </p>
+
+            <p>
+            Subtotal:
+            $${producto.subtotal.toFixed(2)}
+            </p>
+
+        </div>
+
+        `;
+
+    });
+
+    totalHTML.textContent =
+    totalGeneral.toFixed(2);
+
+}
