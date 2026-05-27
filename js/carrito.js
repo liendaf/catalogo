@@ -125,7 +125,7 @@ function enviarWhatsApp(){
     }
 
     let mensaje =
-    "Hola, quiero realizar el siguiente pedido:%0A%0A";
+    "Hola, quiero realizar el siguiente pedido:\n\n";
 
     carrito.forEach(function(producto){
 
@@ -135,12 +135,12 @@ function enviarWhatsApp(){
         producto.cantidad +
         " - Subtotal: $" +
         producto.subtotal.toFixed(2) +
-        "%0A";
+        "\n";
 
     });
 
     mensaje +=
-    "%0A Total: $" +
+    "\nTotal: $" +
     totalHTML.textContent;
 
     let telefono =
