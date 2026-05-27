@@ -150,9 +150,9 @@ function enviarWhatsApp(){
     "https://wa.me/" +
     telefono +
     "?text=" +
-    mensaje;
+    encodeURIComponent(mensaje);
 
-    window.open(url);
+    window.open(url, "_blank");
 
 }
 
