@@ -147,7 +147,7 @@ function enviarWhatsApp(){
     "MIS DATOS:"%0A%0A
     "Nombre y Apellido:"%0A
     "Dirección:"%0A%0A
-    "GRACIAS POR SU COMPRA!"
+    "GRACIAS POR SU COMPRA!";
 
     let telefono =
     "5492984675179";
