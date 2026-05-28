@@ -119,7 +119,6 @@ function enviarWhatsApp(){
     if(carrito.length == 0){
 
         alert("El carrito está vacío");
-
         return;
 
     }
@@ -140,13 +139,13 @@ function enviarWhatsApp(){
     });
 
     mensaje +=
-    "%0ATotal: $" +
+    "%0A Total: $" +
     totalHTML.textContent;
 
     mensaje +=
-    "MIS DATOS:%0A%0A" +
+    "%0A%0AMIS DATOS:%0A%0A" +
     "Nombre y Apellido:%0A" +
-    "Dirección:%0A%0A +
+    "Dirección:%0A%0A" +
     "GRACIAS POR SU COMPRA!";
 
     let telefono =
