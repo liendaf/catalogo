@@ -144,9 +144,9 @@ function enviarWhatsApp(){
     totalHTML.textContent;
 
     mensaje +=
-    "MIS DATOS:"%0A%0A
-    "Nombre y Apellido:"%0A
-    "Dirección:"%0A%0A
+    "MIS DATOS:%0A%0A" +
+    "Nombre y Apellido:%0A" +
+    "Dirección:%0A%0A +
     "GRACIAS POR SU COMPRA!";
 
     let telefono =
