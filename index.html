@@ -36,7 +36,7 @@
 
         <!-- Bloque de Autenticación de Usuario -->
         <div id="auth-container">
-          <button id="btn-login" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-2">
+          <button id="btn-login" class="btn btn-outline-primary btn-sm d-flex align-items-center gap-2" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
               <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0c2.156 0 3.972.78 5.41 2.031l-1.8 1.816C10.603 2.923 9.42 2.5 8 2.5c-3.042 0-5.5 2.458-5.5 5.5s2.458 5.5 5.5 5.5c3.483 0 4.885-2.458 5.09-3.714H8v-2.73h7.545z"/>
             </svg>
@@ -46,7 +46,7 @@
           <div id="user-profile" class="d-none align-items-center gap-2">
             <img id="user-photo" src="" alt="Foto" class="rounded-circle" width="32" height="32">
             <span id="user-name" class="fw-bold small"></span>
-            <button id="btn-logout" class="btn btn-outline-danger btn-sm">Salir</button>
+            <button id="btn-logout" class="btn btn-outline-danger btn-sm" type="button">Salir</button>
           </div>
         </div>
       </div>
@@ -231,7 +231,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="js/carrito.js"></script>
 
-    <!-- Script Modular de Firebase (Autenticación + Métricas en Firestore) -->
+    <!-- Script Modular de Firebase -->
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
       import { 
@@ -249,14 +249,13 @@
         serverTimestamp 
       } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
-      // Reemplaza con los valores de tu proyecto "catalogo-metricas-2026"
       const firebaseConfig = {
-apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
-  authDomain: "catalogo-metricas-2026.firebaseapp.com",
-  projectId: "catalogo-metricas-2026",
-  storageBucket: "catalogo-metricas-2026.firebasestorage.app",
-  messagingSenderId: "816966516939",
-  appId: "1:816966516939:web:cdbf8fd28efae66ed51b4e"
+        apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
+        authDomain: "catalogo-metricas-2026.firebaseapp.com",
+        projectId: "catalogo-metricas-2026",
+        storageBucket: "catalogo-metricas-2026.firebasestorage.app",
+        messagingSenderId: "816966516939",
+        appId: "1:816966516939:web:cdbf8fd28efae66ed51b4e"
       };
 
       // Inicializar Firebase
@@ -264,9 +263,8 @@ apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
       const auth = getAuth(app);
       const db = getFirestore(app);
 
-      // Variables de control de permanencia
+      // Variables de control
       let currentUser = null;
-      let startTime = null;
       let totalActiveSeconds = 0;
       let timerInterval = null;
 
@@ -277,10 +275,9 @@ apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
       const userPhoto = document.getElementById('user-photo');
       const userName = document.getElementById('user-name');
 
-      // 1. Manejo del Cronómetro de Permanencia
+      // Cronómetro
       function startTimer() {
         if (!timerInterval) {
-          startTime = Date.now();
           timerInterval = setInterval(() => {
             totalActiveSeconds++;
           }, 1000);
@@ -294,7 +291,6 @@ apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
         }
       }
 
-      // Detener tiempo cuando el usuario cambia de pestaña o minimiza la ventana
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
           stopTimer();
@@ -304,12 +300,11 @@ apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
         }
       });
 
-      // Guardar tiempo acumulado en Firestore
       async function saveActiveTime() {
         if (currentUser && totalActiveSeconds > 0) {
           const userRef = doc(db, "usuarios", currentUser.uid);
           const secondsToSave = totalActiveSeconds;
-          totalActiveSeconds = 0; // Reiniciar acumulador local
+          totalActiveSeconds = 0;
 
           try {
             await setDoc(userRef, {
@@ -317,20 +312,17 @@ apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
               ultimoAcceso: serverTimestamp()
             }, { merge: true });
           } catch (error) {
-            console.error("Error al actualizar tiempo en Firestore:", error);
+            console.error("Error al guardar tiempo:", error);
           }
         }
       }
 
-      // Guardar antes de cerrar la pestaña
       window.addEventListener('beforeunload', () => {
         saveActiveTime();
       });
 
-      // 2. Registro de Usuario e Incremento de Visita
       async function registerVisit(user) {
         const userRef = doc(db, "usuarios", user.uid);
-        
         try {
           await setDoc(userRef, {
             nombre: user.displayName || 'Anónimo',
@@ -341,17 +333,18 @@ apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
             ultimoAcceso: serverTimestamp()
           }, { merge: true });
         } catch (error) {
-          console.error("Error al registrar visita en Firestore:", error);
+          console.error("Error al registrar visita:", error);
         }
       }
 
-      // 3. Eventos de Inicio y Cierre de Sesión
+      // Evento del botón de Login con ventana popup explicativa si hay bloqueo
       btnLogin.addEventListener('click', async () => {
         const provider = new GoogleAuthProvider();
         try {
           await signInWithPopup(auth, provider);
         } catch (error) {
-          console.error("Error en inicio de sesión:", error);
+          console.error("Detalle del error:", error);
+          alert("Error de autenticación (" + error.code + "): " + error.message);
         }
       });
 
@@ -361,26 +354,20 @@ apiKey: "AIzaSyBDCsBfHF2lW7Sj9dwLhxxGzZMi7Qn41ws",
         await signOut(auth);
       });
 
-      // 4. Observador del Estado de Autenticación
       onAuthStateChanged(auth, async (user) => {
         if (user) {
           currentUser = user;
-          
-          // Actualizar UI
           userPhoto.src = user.photoURL || 'https://via.placeholder.com/32';
           userName.textContent = user.displayName;
           btnLogin.classList.add('d-none');
           userProfile.classList.remove('d-none');
           userProfile.classList.add('d-flex');
 
-          // Registrar visita e iniciar cronómetro
           await registerVisit(user);
           startTimer();
         } else {
           currentUser = null;
           stopTimer();
-
-          // Restablecer UI
           btnLogin.classList.remove('d-none');
           userProfile.classList.add('d-none');
           userProfile.classList.remove('d-flex');
