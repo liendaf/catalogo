@@ -4,376 +4,214 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de productos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilo.css">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2N03R8QDT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E2N03R8QDT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      gtag('config', 'G-E2N03R8QDT');
-    </script>
-</head>
+  gtag('config', 'G-E2N03R8QDT');
+</script>
+    
 <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZT8SN86"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZT8SN86"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+  <figure>
+    <blockquote class="blockquote">
+      <p>Catálogo de productos</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      Crea tu pedido <cite title="Título de la fuente">y te los enviamos!</cite>
+    </figcaption>
+  </figure>
+</header> 
 
-    <!-- BARRA DE AUTENTICACIÓN SUPERIOR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <span class="navbar-brand fs-6">CEAER 2026</span>
-            
-            <!-- Estado: Usuario NO logueado -->
-            <div id="loggedOutNav">
-                <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#authModal">
-                    Iniciar Sesión / Registrarse
-                </button>
-            </div>
+<hr>
+<section class="container">
+<div class="row row-cols-1 row-cols-md-3 g-4">
 
-            <!-- Estado: Usuario LOGUEADO -->
-            <div id="loggedInNav" class="d-flex align-items-center gap-2" style="display: none !important;">
-                <img id="userNavAvatar" src="" alt="Avatar" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover;">
-                <span id="userNavName" class="text-light small"></span>
-                <button id="btnNavLogout" class="btn btn-danger btn-sm ms-2">Salir</button>
-            </div>
-        </div>
-    </nav>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/pexels-photo-2609459.webp" class="card-img-top" alt="Senderos Limay">
+      <div class="card-body">
+        <h5 class="card-title">Senderos Limay</h5>
+        <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional. Este contenido es un poco más largo.</p>
+    <h5 class="precio" data-precio="9999.99">Precio: $9999,99</h5>
+  <select class="form-select form-select-sm cantidad">
+    <option selected>Cantidad</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+  </select>
+<button type="button" class="btn btn-warning agregar">Agregar al carrito</button>
+    </div>
+    </div>
+  </div>
 
-    <header class="mt-3">
-      <figure class="text-center">
-        <blockquote class="blockquote">
-          <p>Catálogo de productos</p>
-        </blockquote>
-        <figcaption class="blockquote-footer">
-          Crea tu pedido <cite title="Título de la fuente">y te los enviamos!</cite>
-        </figcaption>
-      </figure>
-    </header> 
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/pexels-photo-914128.webp" class="card-img-top" alt="Senderos Tandil">
+      <div class="card-body">
+        <h5 class="card-title">Senderos Tandil</h5>
+        <p class="card-text">Esta es una tarjeta corta.</p>
+    <h5 class="precio" data-precio="11999.99">Precio: $11999,99</h5>
+<select class="form-select form-select-sm cantidad">
+  <option selected>Cantidad</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+<button type="button" class="btn btn-warning agregar">Agregar al carrito</button>
 
-    <hr>
-    <section class="container">
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-
-      <div class="col">
-        <div class="card h-100">
-          <img src="img/pexels-photo-2609459.webp" class="card-img-top" alt="Senderos Limay">
-          <div class="card-body">
-            <h5 class="card-title">Senderos Limay</h5>
-            <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional. Este contenido es un poco más largo.</p>
-            <h5 class="precio" data-precio="9999.99">Precio: $9999,99</h5>
-            <select class="form-select form-select-sm cantidad">
-              <option selected>Cantidad</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-            <button type="button" class="btn btn-warning agregar mt-2">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card h-100">
-          <img src="img/pexels-photo-914128.webp" class="card-img-top" alt="Senderos Tandil">
-          <div class="card-body">
-            <h5 class="card-title">Senderos Tandil</h5>
-            <p class="card-text">Esta es una tarjeta corta.</p>
-            <h5 class="precio" data-precio="11999.99">Precio: $11999,99</h5>
-            <select class="form-select form-select-sm cantidad">
-              <option selected>Cantidad</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-            <button type="button" class="btn btn-warning agregar mt-2">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card h-100">
-          <img src="img/pexels-photo-9159898.webp" class="card-img-top" alt="Senderos Lanin">
-          <div class="card-body">
-            <h5 class="card-title">Senderos Lanin</h5>
-            <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional.</p>
-            <h5 class="precio" data-precio="14999.99">Precio: $14999,99</h5>
-            <select class="form-select form-select-sm cantidad">
-              <option selected>Cantidad</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-            <button type="button" class="btn btn-warning agregar mt-2">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card h-100">
-          <img src="img/pexels-photo-34573339.webp" class="card-img-top" alt="Senderos Pehuenia">
-          <div class="card-body">
-            <h5 class="card-title">Senderos Pehuenia</h5>
-            <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional. Este contenido es un poco más largo.</p>
-            <h5 class="precio" data-precio="10999.99">Precio: $10999,99</h5>
-            <select class="form-select form-select-sm cantidad">
-              <option selected>Cantidad</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-            <button type="button" class="btn btn-warning agregar mt-2">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-
-     <div class="col">
-        <div class="card h-100">
-          <img src="img/pexels-photo-32290434.webp" class="card-img-top" alt="Senderos Sierra de la Ventana">
-          <div class="card-body">
-            <h5 class="card-title">Senderos Sierra de la Ventana</h5>
-            <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional. Este contenido es un poco más largo.</p>
-            <h5 class="precio" data-precio="16999.99">Precio: $16999,99</h5>
-            <select class="form-select form-select-sm cantidad">
-              <option selected>Cantidad</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-            <button type="button" class="btn btn-warning agregar mt-2">Agregar al carrito</button>
-          </div>
-        </div>
-      </div>
-
-     <div class="col">
-        <div class="card h-100">
-          <img src="img/pexels-photo-17445329.webp" class="card-img-top" alt="Senderos Bahia Blanca">
-          <div class="card-body">
-            <h5 class="card-title">Senderos Bahia Blanca</h5>
-            <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional. Este contenido es un poco más largo.</p>
-            <h5 class="precio" data-precio="6999.99">Precio: $6999,99</h5>
-            <select class="form-select form-select-sm cantidad">
-              <option selected>Cantidad</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-            </select>
-            <button type="button" class="btn btn-warning agregar mt-2">Agregar al carrito</button>
-          </div>
-        </div>
       </div>
     </div>
-    </section>
+  </div>
 
-    <hr>
-    <section class="container mt-5">
-        <h2>Carrito de pedidos</h2>
-        <div id="carrito" class="border p-3 rounded">
-            <p>No hay productos agregados.</p>
-        </div>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/pexels-photo-9159898.webp" class="card-img-top" alt="Senderos Lanin">
+      <div class="card-body">
+        <h5 class="card-title">Senderos Lanin</h5>
+        <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional.</p>
+    <h5 class="precio" data-precio="14999.99">Precio: $14999,99</h5>
+<select class="form-select form-select-sm cantidad">
+  <option selected>Cantidad</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+<button type="button" class="btn btn-warning agregar">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
 
-        <h4 class="mt-3">
-            Total: $<span id="total">0</span>
-        </h4>
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/pexels-photo-34573339.webp" class="card-img-top" alt="Senderos Pehuenia">
+      <div class="card-body">
+        <h5 class="card-title">Senderos Pehuenia</h5>
+        <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional. Este contenido es un poco más largo.</p>
+         <h5 class="precio" data-precio="10999.99">Precio: $10999,99</h5>
+<select class="form-select form-select-sm cantidad">
+  <option selected>Cantidad</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+<button type="button" class="btn btn-warning agregar">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
 
-        <button id="enviar" class="btn btn-success mt-3">
-            Generar pedido WhatsApp
-        </button>
-    </section>
-    <hr>
+ <div class="col">
+    <div class="card h-100">
+      <img src="img/pexels-photo-32290434.webp" class="card-img-top" alt="Senderos Sierra de la Ventana">
+      <div class="card-body">
+        <h5 class="card-title">Senderos Sierra de la Ventana</h5>
+        <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional. Este contenido es un poco más largo.</p>
+         <h5 class="precio" data-precio="16999.99">Precio: $6999,99</h5>
+<select class="form-select form-select-sm cantidad">
+  <option selected>Cantidad</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+<button type="button" class="btn btn-warning agregar">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
 
-    <footer>
-        <figure class="text-center">
-          <blockquote class="blockquote">
-            <p>PÁGINA EDUCATIVA MATERIA PROGRAMACIÓN Y DISEÑO WEB II. CEAER 2026</p>
-          </blockquote>
-        </figure>
-    </footer>
+ <div class="col">
+    <div class="card h-100">
+      <img src="img/pexels-photo-17445329.webp" class="card-img-top" alt="Senderos Bahia Blanca">
+      <div class="card-body">
+        <h5 class="card-title">Senderos Bahia Blanca</h5>
+        <p class="card-text">Esta es una tarjeta más larga con texto de apoyo a continuación como una introducción natural al contenido adicional. Este contenido es un poco más largo.</p>
+         <h5 class="precio" data-precio="6999.99">Precio: $6999,99</h5>
+<select class="form-select form-select-sm cantidad">
+  <option selected>Cantidad</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+</select>
+<button type="button" class="btn btn-warning agregar">Agregar al carrito</button>
 
-    <!-- MODAL DE AUTENTICACIÓN MULTIPROVEEDOR -->
-    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="authModalLabel">Acceso de Usuarios</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body p-4">
-                    <!-- Botones Sociales -->
-                    <div class="d-grid gap-2 mb-3">
-                        <button id="btnGoogle" class="btn btn-outline-danger d-flex align-items-center justify-content-center gap-2">
-                            <svg width="18" height="18" viewBox="0 0 24 24"><path fill="currentColor" d="M21.35 11.1H12v3.33h5.37c-.23 1.22-.92 2.26-1.96 2.96v2.46h3.17c1.86-1.71 2.93-4.23 2.93-7.25c0-.68-.06-1.34-.16-1.5z"/><path fill="currentColor" d="M12 21c2.62 0 4.82-.87 6.43-2.36l-3.17-2.46c-.87.59-1.98.94-3.26.94c-2.51 0-4.64-1.7-5.4-3.99H3.34v2.53C4.95 18.84 8.24 21 12 21z"/><path fill="currentColor" d="M6.6 13.13a5.99 5.99 0 0 1 0-2.26V8.34H3.34A9.99 9.99 0 0 0 2 12c0 1.61.39 3.14 1.34 4.47l3.26-2.53z"/><path fill="currentColor" d="M12 6.58c1.43 0 2.71.49 3.72 1.46l2.79-2.79C16.82 3.66 14.62 2.7 12 2.7c-3.76 0-7.05 2.16-8.66 5.34l3.26 2.53c.76-2.29 2.89-3.99 5.4-3.99z"/></svg>
-                            Ingresar con Google
-                        </button>
-                        <button id="btnMicrosoft" class="btn btn-outline-primary d-flex align-items-center justify-content-center gap-2">
-                            <svg width="18" height="18" viewBox="0 0 23 23"><path fill="#f35325" d="M1 1h10v10H1z"/><path fill="#81bc06" d="M12 1h10v10H1z"/><path fill="#05a6f0" d="M1 12h10v10H1z"/><path fill="#ffba08" d="M12 12h10v10H1z"/></svg>
-                            Ingresar con Microsoft / Hotmail
-                        </button>
-                        <button id="btnYahoo" class="btn btn-outline-dark d-flex align-items-center justify-content-center gap-2" style="border-color: #6001d2; color: #6001d2;">
-                            <strong>Y!</strong> Ingresar con Yahoo
-                        </button>
-                    </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
 
-                    <div class="text-center text-muted mb-3">— O con correo y clave —</div>
-
-                    <!-- Formulario Tradicional -->
-                    <form id="formAuth">
-                        <div class="mb-3">
-                            <input type="email" id="authEmail" class="form-control" placeholder="Correo electrónico" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="password" id="authPassword" class="form-control" placeholder="Contraseña" required>
-                        </div>
-                        <div class="d-flex gap-2">
-                            <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
-                            <button type="button" id="btnRegister" class="btn btn-outline-secondary w-100">Registrarse</button>
-                        </div>
-                    </form>
-                    <p id="authError" class="text-danger small mt-3 mb-0 text-center" style="display:none;"></p>
-                </div>
-            </div>
-        </div>
+<hr>
+<section class="container mt-5">
+    <h2>Carrito de pedidos</h2>
+    <div id="carrito" class="border p-3 rounded">
+        <p>No hay productos agregados.</p>
     </div>
 
-    <!-- SCRIPTS DE BOOTSTRAP Y LÓGICA EXISTENTE -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <h4 class="mt-3">
+        Total: $<span id="total">0</span>
+    </h4>
+
+    <button id="enviar" class="btn btn-success mt-3">
+        Generar pedido WhatsApp
+    </button>
+
+</section>
+<hr>
+
+
+<footer>
+    <figure class="text-center">
+  <blockquote class="blockquote">
+    <p>PAGINA EDUCATIVA MATERIA PROGRAMACIÓN Y DISEÑO WEB II. CEAER 2026</p>
+  </blockquote>
+</figure>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="js/carrito.js"></script>
-
-    <!-- INTEGRACIÓN FIREBASE AUTHENTICATION (v10 SDK) -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-        import { 
-            getAuth, 
-            signInWithPopup, 
-            GoogleAuthProvider, 
-            OAuthProvider,
-            createUserWithEmailAndPassword,
-            signInWithEmailAndPassword,
-            signOut, 
-            onAuthStateChanged 
-        } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
-
-        // CREDENCIALES
-        const firebaseConfig = {
-            apiKey: "AIzaSyBMCZG3-_6LUhbywxRUsQWHXUtTVqsZ0_w",
-            authDomain: "marketing-app-b6538.firebaseapp.com",
-            projectId: "marketing-app-b6538",
-            storageBucket: "marketing-app-b6538.firebasestorage.app",
-            messagingSenderId: "771310022281",
-            appId: "1:771310022281:web:5b45610747b180b5cbe058"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-
-        // Proveedores de SSO
-        const googleProvider = new GoogleAuthProvider();
-        const microsoftProvider = new OAuthProvider('microsoft.com');
-        const yahooProvider = new OAuthProvider('yahoo.com');
-
-        // Instancia del Modal de Bootstrap
-        const authModalElement = document.getElementById('authModal');
-        const authModal = new bootstrap.Modal(authModalElement);
-        const authError = document.getElementById("authError");
-
-        // Funciones de Inicio de Sesión
-        function loginConProveedor(provider) {
-            signInWithPopup(auth, provider)
-                .then(() => authModal.hide())
-                .catch(err => mostrarError("Error de autenticación: " + err.message));
-        }
-
-        document.getElementById("btnGoogle").addEventListener("click", () => loginConProveedor(googleProvider));
-        document.getElementById("btnMicrosoft").addEventListener("click", () => loginConProveedor(microsoftProvider));
-        document.getElementById("btnYahoo").addEventListener("click", () => loginConProveedor(yahooProvider));
-
-        // Registro Tradicional
-        document.getElementById("btnRegister").addEventListener("click", () => {
-            const email = document.getElementById("authEmail").value;
-            const password = document.getElementById("authPassword").value;
-            if(!email || !password) return mostrarError("Completa email y contraseña.");
-
-            createUserWithEmailAndPassword(auth, email, password)
-                .then(() => authModal.hide())
-                .catch(err => mostrarError("Error al registrar: " + err.message));
-        });
-
-        // Ingreso Tradicional
-        document.getElementById("formAuth").addEventListener("submit", (e) => {
-            e.preventDefault();
-            const email = document.getElementById("authEmail").value;
-            const password = document.getElementById("authPassword").value;
-
-            signInWithEmailAndPassword(auth, email, password)
-                .then(() => authModal.hide())
-                .catch(() => mostrarError("Credenciales inválidas."));
-        });
-
-        // Cierre de Sesión
-        document.getElementById("btnNavLogout").addEventListener("click", () => signOut(auth));
-
-        // Persistencia y Control de Estado
-        onAuthStateChanged(auth, (user) => {
-            const loggedOutNav = document.getElementById("loggedOutNav");
-            const loggedInNav = document.getElementById("loggedInNav");
-
-            if (user) {
-                document.getElementById("userNavName").textContent = user.displayName || user.email;
-                document.getElementById("userNavAvatar").src = user.photoURL || "https://via.placeholder.com/32?text=U";
-                
-                loggedOutNav.style.setProperty("display", "none", "important");
-                loggedInNav.style.setProperty("display", "flex", "important");
-                authError.style.display = "none";
-            } else {
-                loggedOutNav.style.setProperty("display", "block", "important");
-                loggedInNav.style.setProperty("display", "none", "important");
-            }
-        });
-
-        function mostrarError(msg) {
-            authError.textContent = msg;
-            authError.style.display = "block";
-        }
-    </script>
-</body>
+  </body>
 </html>
